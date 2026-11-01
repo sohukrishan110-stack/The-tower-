@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0b0f3b">
+<title>Perfect Stack</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c" aria-label="Perfect Stack game area"></canvas>
+
+<div id="hud" class="hidden">
+  <div id="hcoins">🪙 0</div>
+  <button id="hsnd" class="icon" data-act="sound" aria-label="Toggle sound">🔊</button>
+  <div id="score">0</div>
+  <div id="combo" class="hidden"></div>
+</div>
+
+<main id="menu" class="screen">
+  <h1 class="logo">PERFECT<br>STACK</h1>
+  <div class="best"><span>Best score</span><b id="mBest">0</b><small>🪙 <span id="mCoins">0</span> coins</small></div>
+  <button class="btn big" data-act="play">Play</button>
+  <button class="btn" data-act="themes">Themes</button>
+  <button class="btn" data-act="scores">High Scores</button>
+  <button id="snd" class="btn" data-act="sound">Sound: On</button>
+</main>
+
+<section id="themeScr" class="screen hidden">
+  <h2>Themes</h2>
+  <p class="sub">Your coins: <b id="tCoins">0</b></p>
+  <div id="themeList" class="list"></div>
+  <button class="btn" data-act="menu">Back</button>
+</section>
+
+<section id="scoreScr" class="screen hidden">
+  <h2>High Scores</h2>
+  <div id="stats" class="stats"></div>
+  <p class="sub">Your best runs on this device</p>
+  <ol id="board" class="board"></ol>
+  <button class="btn" data-act="menu">Back</button>
+</section>
+
+<section id="over" class="screen hidden">
+  <div class="panel">
+    <h2>Game over</h2>
+    <div id="oNew" class="badge hidden">New best!</div>
+    <div class="big-num" id="oScore">0</div>
+    <div class="stats">
+      <div><span>Best</span><b id="oBest">0</b></div>
+      <div><span>Top combo</span><b id="oCombo">0</b></div>
+      <div><span>Coins</span><b id="oCoins">0</b></div>
+    </div>
+    <button class="btn big" data-act="restart">Restart</button>
+    <button class="btn" data-act="menu">Main Menu</button>
+  </div>
+</section>
+
+<div id="toast" class="hidden" role="status"></div>
+<script src="game.js"></script>
+</body>
+</html>
